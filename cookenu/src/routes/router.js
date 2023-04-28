@@ -7,11 +7,12 @@ import {
     AddRecipePage,
     ErrorPage
 } from '../pages'
+import { Header } from '../components'
 
 export const Router = () => {
     return (
         <BrowserRouter>
-        
+            <Header />
             <Routes>
                 <Route path='/login' element={<LoginPage />}/>
                 <Route path='/signup' element={<SignUpPage />}/>
