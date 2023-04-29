@@ -1,4 +1,5 @@
 import { extendTheme } from "@chakra-ui/react"
+import { color } from "framer-motion"
 
 export const theme = extendTheme({
     components: {
@@ -9,7 +10,24 @@ export const theme = extendTheme({
                 },
                 form: {
                     width: "100%",
-                    bg: "laranja.500"
+                    bg: "laranja.500",
+                    color: "white",
+                    _hover: {
+                        bg: "white",
+                        color: "laranja.500",
+                        border: "3px solid #FE7E02"
+                    }
+                },
+                formSignUp: {
+                    width: "100%",
+                    bg: "white",
+                    color: "laranja.500",
+                    _hover: {
+                        fontWeight: "normal",
+                        color: "black",
+                        textDecoration: "underline",
+                        border: "1px solid grey" 
+                    }
                 }
             }
         }
