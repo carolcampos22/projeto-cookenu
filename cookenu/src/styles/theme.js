@@ -8,7 +8,7 @@ export const theme = extendTheme({
                 header: {
                     bg: "laranja.500"
                 },
-                form: {
+                "form": {
                     width: "100%",
                     bg: "laranja.500",
                     color: "white",
@@ -18,7 +18,7 @@ export const theme = extendTheme({
                         border: "3px solid #FE7E02"
                     }
                 },
-                formSignUp: {
+                "formSignUp": {
                     width: "100%",
                     bg: "white",
                     color: "laranja.500",
@@ -27,6 +27,20 @@ export const theme = extendTheme({
                         color: "black",
                         textDecoration: "underline",
                         border: "1px solid grey" 
+                    }
+                },
+                "add-recipe": {
+                    borderRadius: "50%",
+                    fontSize: "2rem",
+                    width: "30px",
+                    padding: "5px",
+                    bg: "laranja.500",
+                    position: "fixed",
+                    bottom: "1.5vw",
+                    right: "1.5vw",
+                    transition: "0.5s",
+                    _hover: {
+                        transform: "scale(1.2)"
                     }
                 }
             }
