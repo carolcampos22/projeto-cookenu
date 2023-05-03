@@ -2,7 +2,7 @@ export const goToLoginPage = (navigator) => {
     navigator('/login')
 }
 
-export const goTpSignUpPage = (navigator) => {
+export const goToSignUpPage = (navigator) => {
     navigator('/signup')
 }
 

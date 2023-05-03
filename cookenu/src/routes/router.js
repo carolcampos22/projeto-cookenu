@@ -9,7 +9,7 @@ import {
 } from '../pages'
 import { Header } from '../components'
 
-export const Router = () => {
+ const Router = () => {
     return (
         <BrowserRouter>
             <Header />
@@ -25,3 +25,5 @@ export const Router = () => {
         </BrowserRouter>
     )
 }
+
+export default Router;

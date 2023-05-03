@@ -1,4 +1,4 @@
-import { Router } from "./routes/router";
+import  Router  from "./routes/router";
 import { ChakraProvider } from '@chakra-ui/react'
 import {theme} from './styles'
 
