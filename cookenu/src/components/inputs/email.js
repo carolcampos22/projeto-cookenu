@@ -12,7 +12,6 @@ export const EmailInput = ({ isValid, value, onChange }) => {
             <FormLabel>Email</FormLabel>
             <Input
                 name="email"
-                //  type='email'
                 value={value}
                 onChange={onChange}
                 placeholder="E-mail"

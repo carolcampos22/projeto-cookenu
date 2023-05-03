@@ -7,36 +7,52 @@ import {
     PasswordInput,
     NameInput
 } from '../../components'
-import {Button} from '@chakra-ui/react'
-import { validadeName, validateEmail, validatePassword } from "../../constants"
-
-
+import { Button } from '@chakra-ui/react'
+import { validateName, validateEmail, validatePassword } from "../../constants"
+import { SignUp } from "../../constants"
 import logo from '../../assets/cookenu.png'
+import { goToFeedPage } from '../../routes/coordinator'
+import { useNavigate } from "react-router-dom"
+
 
 export const SignUpPage = () => {
+    const navigate = useNavigate()
 
     const { form, onChangeInputs, clearInputs } = useForm({
-        name: "",
+        email: "",
         password: "",
         name: ""
     })
 
     const [isEmailValid, setIsEmailValid] = useState(true)
-    
+
     const [isPasswordValid, setIsPasswordValid] = useState(true)
 
     const [isNameValid, setIsNameValid] = useState(true)
 
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault()
         console.log(form)
         setIsEmailValid(validateEmail(form.email))
         setIsPasswordValid(validatePassword(form.password));
-        setIsNameValid(validadeName(form.name))
+        setIsNameValid(validateName(form.name))
+        
+        try {
+            const {token} = isNameValid && isEmailValid && isPasswordValid && await SignUp({
+                email: form.email,
+                password: form.password,
+                name: form.name
+
+            })
+            localStorage.getItem("cookenu.token", token)
+            goToFeedPage(navigate)
+        } catch (e) {
+            alert(e.response.data.message)
+        }
 
     }
 
-    
+
 
     return (
         <SignUpPageContainer>
@@ -44,10 +60,10 @@ export const SignUpPage = () => {
                 <form onSubmit={onSubmit}>
                     <img src={logo} />
 
-                    <NameInput 
-                    value={form.name}
-                    onChange={onChangeInputs}
-                    isValid={isNameValid}
+                    <NameInput
+                        value={form.name}
+                        onChange={onChangeInputs}
+                        isValid={isNameValid}
 
                     />
 
@@ -57,15 +73,15 @@ export const SignUpPage = () => {
                         isValid={isEmailValid}
                     />
 
-                    <PasswordInput 
+                    <PasswordInput
                         value={form.password}
                         onChange={onChangeInputs}
                         isValid={isPasswordValid}
 
                     />
-                    
+
                     <Button type="submit" variant="form">Cadastrar</Button>
-                    
+
                 </form>
             </FormContainer>
         </SignUpPageContainer>
