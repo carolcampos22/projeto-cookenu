@@ -20,6 +20,6 @@ export const PageContainer = styled.div`
     }
 
     p{
-        width: 35vw;
+        width: 36vw;
     }
 `

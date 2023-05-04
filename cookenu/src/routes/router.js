@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import {
     LoginPage,
     SignUpPage,
@@ -8,20 +8,25 @@ import {
     ErrorPage
 } from '../pages'
 import { Header } from '../components'
+import { useState } from 'react'
 
- const Router = () => {
+const Router = () => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
     return (
         <BrowserRouter>
-            <Header />
+            <Header
+                isLoggedIn={isLoggedIn}
+                setIsLoggedIn={setIsLoggedIn}
+            />
             <Routes>
-                <Route path='/login' element={<LoginPage />}/>
-                <Route path='/signup' element={<SignUpPage />}/>
-                <Route path='/feed' element={<FeedPage />}/>
-                <Route path='/add-recipe' element={<AddRecipePage />}/>
-                <Route path='/recipe/:id' element={<RecipeDetailPage />}/>
-                <Route path='*' element={<ErrorPage />}/>
+                <Route path='/' element={<LoginPage setIsLoggedIn={setIsLoggedIn}/>} />
+                <Route path='/signup' element={<SignUpPage />} />
+                <Route path='/feed' element={<FeedPage />} />
+                <Route path='/add-recipe' element={<AddRecipePage />} />
+                <Route path='/recipe/:id' element={<RecipeDetailPage />} />
+                <Route path='*' element={<ErrorPage />} />
             </Routes>
-        
+
         </BrowserRouter>
     )
 }
