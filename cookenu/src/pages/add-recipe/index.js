@@ -1,4 +1,4 @@
-import { useForm } from "../../hooks"
+import { useForm, useProtectedPage } from "../../hooks"
 import { useState, useEffect } from 'react'
 import {
     CenteredPageContainer as AddRecipePageContainer,
@@ -11,6 +11,7 @@ import { Button, Textarea } from '@chakra-ui/react'
 import { validateName } from "../../constants"
 import { AddRecipes } from "../../constants"
 import { PageTitleStyled } from "./styled"
+import { useNavigate } from "react-router-dom"
 
 
 
@@ -22,12 +23,15 @@ export const AddRecipePage = () => {
         imageUrl: ""
     })
 
+    const navigate = useNavigate()
 
     const [isTitleValid, setIsTitleValid] = useState(true)
 
     const [isUrlValid, setIsUrlValid] = useState(true)
 
     const [isNameValid, setIsNameValid] = useState(true)
+
+    useProtectedPage(navigate)
 
     useEffect(() => {
         setIsTitleValid(validateName(form.title, 4))

@@ -1,13 +1,18 @@
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { GetRecipes } from '../../constants'
 import { PageContainer } from './styled'
+import { useProtectedPage } from '../../hooks'
 
 
 export const RecipeDetailPage = () => {
     const { id } = useParams()
     const [recipe, setRecipe] = useState([])
     
+    const navigate = useNavigate()
+
+    useProtectedPage(navigate)
+
     useEffect(() => {
         GetRecipes(id)
         .then(recipe => {
