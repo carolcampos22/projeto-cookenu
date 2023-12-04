@@ -10,7 +10,7 @@ import {
 import { Header } from '../components'
 import { useState } from 'react'
 
-const Router = () => {
+const Router = ({loading}) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false)
     return (
         <BrowserRouter>
@@ -19,7 +19,7 @@ const Router = () => {
                 setIsLoggedIn={setIsLoggedIn}
             />
             <Routes>
-                <Route path='/' element={<LoginPage setIsLoggedIn={setIsLoggedIn}/>} />
+                <Route path='/' element={<LoginPage loading={loading} setIsLoggedIn={setIsLoggedIn}/>} />
                 <Route path='/signup' element={<SignUpPage />} />
                 <Route path='/feed' element={<FeedPage />} />
                 <Route path='/add-recipe' element={<AddRecipePage />} />

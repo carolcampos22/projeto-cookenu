@@ -16,7 +16,7 @@ import { useNavigate } from "react-router-dom"
 import { Login } from "../../constants"
 import { ImageLogo } from "./styled"
 
-export const LoginPage = ({ setIsLoggedIn }) => {
+export const LoginPage = ({ setIsLoggedIn, loading }) => {
     const navigate = useNavigate()
 
     const { form, onChangeInputs, clearInputs } = useForm({
@@ -53,6 +53,7 @@ export const LoginPage = ({ setIsLoggedIn }) => {
 
     return (
         <LoginPageContainer>
+            {loading && <h3>Carregando...</h3>}
             <FormContainer>
                 <form onSubmit={onSubmit}>
                     <ImageLogo class="image-logo-cookenu">
