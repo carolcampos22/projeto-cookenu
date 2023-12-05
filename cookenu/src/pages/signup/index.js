@@ -13,6 +13,7 @@ import { SignUp } from "../../constants"
 import logo from '../../assets/cookenu.png'
 import { goToFeedPage } from '../../routes/coordinator'
 import { useNavigate } from "react-router-dom"
+import { ImageLogo } from "./styled"
 
 
 export const SignUpPage = () => {
@@ -58,7 +59,9 @@ export const SignUpPage = () => {
         <SignUpPageContainer>
             <FormContainer>
                 <form onSubmit={onSubmit}>
-                    <img src={logo} />
+                <ImageLogo class="image-logo-cookenu">
+                        <img src={logo} />
+                    </ImageLogo>
 
                     <NameInput
                         value={form.name}
