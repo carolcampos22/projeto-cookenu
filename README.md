@@ -24,7 +24,7 @@ Site de receitas que utiliza a API Cookenu. Nesse site é possível fazer login,
 O projeto será aberto em seu navegador padrão, na porta localhost:3000. 
 
 ### Site do projeto
-O site pode ser visualizado no link https://spooky-bone.surge.sh//
+O site pode ser visualizado no link http://noisy-cart.surge.sh/
 
 ### Layout
 1. Página de Login:
