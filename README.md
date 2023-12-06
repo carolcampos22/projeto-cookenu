@@ -28,16 +28,16 @@ O site pode ser visualizado no link https://spooky-bone.surge.sh//
 
 ### Layout
 1. Página de Login:
-![](./src/assets/login-page.png)
+![](./cookenu/src/assets/login-page.png)
 
 2. Página de Cadastro:
-![](./src/assets/signup-page.png)
+![](./cookenu/src/assets/signup-page.png)
 
 3. Feed de receitas:
-![](./src/assets/feed.png)
+![](./cookenu/src/assets/feed.png)
 
 4. Página de detalhes de receita:
-![](./src/assets/recipe-details.png)
+![](./cookenu/src/assets/recipe-details.png)
 
 ### Próximos passos
 - Modos claro e escuro
